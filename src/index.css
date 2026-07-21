@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 213 9% 19%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 9% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 9% 19%;
+
+    --primary: 108 41% 39%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 36 25% 92%;
+    --secondary-foreground: 213 9% 19%;
+
+    --muted: 36 22% 93%;
+    --muted-foreground: 213 8% 42%;
+
+    --accent: 108 35% 92%;
+    --accent-foreground: 108 45% 22%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 36 20% 87%;
+    --input: 36 20% 87%;
+    --ring: 108 41% 39%;
+
+    --radius: 0.65rem;
+  }
+
+  .dark {
+    --background: 213 15% 11%;
+    --foreground: 40 20% 95%;
+
+    --card: 213 14% 14%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 213 14% 14%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 108 40% 52%;
+    --primary-foreground: 213 15% 11%;
+
+    --secondary: 213 10% 19%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 213 10% 19%;
+    --muted-foreground: 213 8% 65%;
+
+    --accent: 108 25% 20%;
+    --accent-foreground: 108 45% 82%;
+
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 40 20% 95%;
+
+    --border: 213 10% 22%;
+    --input: 213 10% 22%;
+    --ring: 108 40% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
