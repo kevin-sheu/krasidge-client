@@ -3,6 +3,9 @@ dist/
 build/
 coverage/
 *.tsbuildinfo
+shared/node_modules/
+shared/dist/
+shared/*.tsbuildinfo
 
 .env
 .env.local
