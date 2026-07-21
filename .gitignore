@@ -26,3 +26,8 @@ Thumbs.db
 .cache/
 .eslintcache
 *.pem
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
